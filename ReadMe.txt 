@@ -1,0 +1,14 @@
+to run the app:
+way A:
+1.I used python virtual environment by typing in the terminl:
+source venv/bin/activate
+
+2.type in the terminal:
+export FLASK_APP=server.py
+
+3.type in the terminal:
+flask run
+
+way B:
+by using vscode, all the settings should be preconfigured.
+you have to have flask installed in virtual environment.

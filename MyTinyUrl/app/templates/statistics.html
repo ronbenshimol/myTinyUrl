@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="/static/scripts/bootstrap/dist/css/bootstrap.css">
+	<link href="static/styles/style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="statisticsApp">
+
+      <section class="container">
+        <h1>URL redirections registered in the database: ${redirectionsCount}</h1>
+      </section>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">URL redirections in the last day</h4>
+                <div>
+                  <chartjs-bar :labels="lastDayGoodLabels" :data="lastDayGoodDataset" :bind="true"></chartjs-bar>
+                </div>       
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">URL redirections in the last hour</h4>
+                <div>
+                  <chartjs-bar :labels="lastHourGoodLabels" :data="lastHourGoodDataset" :bind="true"></chartjs-bar>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">URL redirections in the last minute</h4>
+                <div>
+                  <chartjs-bar :labels="lastMinuteGoodLabels" :data="lastMinuteGoodDataset" :bind="true"></chartjs-bar>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Bad requests in the last day</h4>
+                <div>
+                  <chartjs-bar :labels="lastDayBadLabels" :data="lastDayBadDataset" :bind="true"></chartjs-bar>
+                </div>       
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Bad requests in the last hour</h4>
+                <div>
+                  <chartjs-bar :labels="lastHourBadLabels" :data="lastHourBadDataset" :bind="true"></chartjs-bar>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Bad requests in the last minute</h4>
+                <div>
+                  <chartjs-bar :labels="lastMinuteBadLabels" :data="lastMinuteBadDataset" :bind="true"></chartjs-bar>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="/static/scripts/axios/dist/axios.js"></script>
+  <script src="/static/scripts/vue/dist/vue.js"></script>
+  <script src="/static/scripts/chartjs/Chart.min.js"></script>
+  <script src="/static/scripts/vue-charts/vue-charts.min.js"></script>
+  <script src="static/scripts/statisticsApp.js"></script>
+</body>
+</html>
